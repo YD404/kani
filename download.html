@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="items/icon.ico" type="image/x-icon">
+    <title>カニ娘公式サイト ダウンロード</title>
+</head>
+
+<body>
+    <!-- <div class="background-video">
+        <video src="items/background.webm" autoplay loop muted></video>
+    </div> -->
+    <header><!-- テンプレートを読み込む -->
+        <div id="menu-container"></div>
+        <script>
+            // テンプレートを読み込み、#menu-containerに追加する
+            fetch('html/menu-template.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                });
+        </script>
+    </header>
+    <hr>
+    <div class="content">
+        <div class="textBox">
+            <div class="title">
+                <h1>ダウンロードの前に...</h1>
+            </div>
+            <div class="main-text">
+                <p>規約は読んだ？
+                </p>
+                <h1><a href="rule.html">規約を読む</a></h1>
+            </div>
+        </div>
+        <div class="textBox">
+            <div class="title">
+                <h1>ダウンロード</h1>
+            </div>
+            <div class="main-text">
+                <h1><a href="https://coeiroink.com/" target="_blank">COEIROINKのダウンロード</a></h1>
+                <p>カニ娘を使うには、シロワニさんが無償で提供しているCOEIROINK、またはCOEIROINK2が必要です。<a href="https://coeiroink.com"
+                        target="_blank">COEIROINK公式サイト</a>の手順に従ってダウンロードしてください。既にCOEIROINKをダウンロードしている方は飛ばしてください。</p>
+                <h1><a href="#" target="_blank">MYCOEIROINKカニ娘のダウンロード</a></h1>
+                <p>ダウンロードしたMYCOEIROINKをCOEIROINKに追加するには、COEIROINKフォルダー内の[speaker_info]フォルダーに、MYCOEIROINKの英数字が羅列されているフォルダーを移動させてください。追加を反映させるには、COEIROINKを再起動させてください。<br>
+                    詳しい方法は<a href="https://coeiroink.com/mycoeiroink/installation"
+                        target="_blank">COEIROINK公式</a>を閲覧してください。</p>
+                <h1><a href="items/kanimusumeLogo.png" target="_blank">ロゴのダウンロード</a></h1>
+                <p>リンク先の画像を右クリックして名前を付けて保存してください。</p>
+            </div>
+        </div>
+        <div class="sidebar">
+            <!-- ここにメニューバーを追加 -->
+        </div>
+    </div>
+    <div id="footer-container"></div>
+</body>
+<script src="script.js"></script>
+
+</html>

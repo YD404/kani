@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="items/icon.ico" type="image/x-icon">
+    <title>カニ娘公式サイト</title>
+</head>
+
+<body>
+    <div id="loading-container">
+        <img src="items/logo.avif" width="25%" alt="Logo" class="logo">
+        <div class="loading-animation"></div>
+    </div>
+
+    <div id="site-content" style="display: none;">
+        <div class="background-video">
+            <video src="items/background.mp4" autoplay loop muted></video>
+        </div>
+        <header><!-- テンプレートを読み込む -->
+            <div id="menu-container"></div>
+            <script>
+                // テンプレートを読み込み、#menu-containerに追加する
+                fetch('html/menu-template.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('menu-container').innerHTML = data;
+                    });
+            </script>
+        </header>
+        <div class="content">
+            <hr>
+            <div class="main-visual-container">
+                <div class="main-visual-left">
+                    <img src="items/logo.avif" alt="ロゴ" width="75%"> <!-- ロゴ画像のパスと代替テキストを追加 -->
+                    <h2>かにかにかにかに<br>
+                        カニ娘。</h2>
+                </div>
+                <div class="main-visual-right">
+                    <img src="items/main-visual-a.avif" alt="Image 1" class="slide active">
+                    <img src="items/main-visual-b.avif" alt="Image 2" class="slide">
+                    <img src="items/main-visual-c.avif" alt="Image 3" class="slide">
+                </div>
+            </div>
+            <div class="textBox">
+                <div class="title">
+                    <h1>カニ娘とは？</h1>
+                </div>
+                <div class="main-text">
+                    <p>　カニ娘（本名：蟹ヶ谷 ムサコ）とは、明るく元気な女の子をイメージして作られた、無料で使えるMYCOEIROINK音声ライブラリです。<br>
+                        　あなたのお好みの文章や言葉をテキストで入力するだけで、簡単に読み上げさせることができます。<br>
+                        　COEIROINK2では新たなエディター方式を採用。なんか見た目がいい感じになって操作することができるようになりました。また、一文ごとに別々のボイスを割り当てることで対話のような編集も可能です。
+                    </p>
+                    <img src="items/coeiroink2.avif" alt="test">
+                    <h5>※画像は開発版です。配布版とは異なる場合があります。</h5>
+                    <h1>サンプル音声</h1>
+                    <audio controls>
+                        <source src="items/audio01.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <audio controls>
+                        <source src="items/audio02.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                    <audio controls>
+                        <source src="items/audio03.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </div>
+            </div>
+            <div class="textBox">
+                <!-- <div class="title">
+                <h1>タイトル</h1>
+            </div> -->
+                <div class="main-text">
+                    <p>　カニ娘は、Googleドライブにて配布中です。利用規約の範囲内なら、だれでも無償で
+                        使うことができます。詳しい規約や、ダウンロードリンクは以下の<a href="rule.html">「ダウンロードしたい」</a>をクリックしてください。
+                    </p>
+                    <h1><a href="rule.html">ダウンロードしたい</a></h1>
+                </div>
+            </div>
+            <div class="sidebar">
+                <!-- ここにメニューバーを追加 -->
+            </div>
+        </div>
+        <div id="footer-container"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

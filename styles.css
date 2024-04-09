@@ -1,0 +1,453 @@
+body {
+    margin: 0;
+    background-color: #F29472;
+    overflow: auto;
+    /* ページをスクロール可能にする */
+    font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* ビデオの上でイベントが発生しないように */
+    z-index: -1;
+    /* メニューなどよりも背面に配置 */
+}
+
+.background-video video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+/* メニューのスタイル */
+.menu {
+    background-color: #590202;
+    /* メニューの背景色 */
+    margin: 20px auto 0;
+    /* 上に20pxの空白を追加 */
+    color: #fff;
+    /* 文字色 */
+    max-width: 90%;
+    z-index: 1000;
+    /* メニューを最前面に表示 */
+    display: flex;
+    justify-content: space-between;
+    /* 要素を左右に配置 */
+    padding: 12px 40px;
+    /* 左右に40pxの空白を追加 */
+    border-radius: 12px;
+    /* 縁を丸くする */
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    /* text-align: center;メニューの中央寄せ */
+    /* align-items: center;要素を中央に配置 */
+}
+
+.menu a {
+    text-decoration: none;
+    /* リンクの下線をなくす */
+    margin: 0 10px;
+    /* 各リンクの間の余白 */
+    color: #fff;
+    /* リンクの色 */
+    font-size: 125%;
+    /* リンクのフォントサイズ */
+    position: relative;
+    /* 相対位置指定 */
+}
+
+.menu a:hover {
+    color: #F29472;
+    /* ホバー時のリンクの色 */
+}
+
+.menu a::after {
+    content: "";
+    /* 擬似要素を生成 */
+    position: absolute;
+    bottom: -2px;
+    /* 下に2pxの余白 */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* 下線の高さ */
+    background-color: #F29472;
+    /* 下線の色 */
+    transform: scaleX(0);
+    /* 初期状態は非表示 */
+    transition: transform 0.3s ease;
+    /* アニメーションの設定 */
+    /* display: block; */
+    /* transform-origin: bottom right; */
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+    /* ホバー時に表示 */
+    transform-origin: bottom left;
+}
+
+/* レスポンシブスタイル */
+@media only screen and (max-width: 800px) {
+    .menu {
+        position: fixed;
+        max-width: 100%;
+        margin: -0px auto 0;
+        /* 上に-0pxの空白を追加 */
+        padding: 8px 8px;
+        /* 左右に8pxの空白を追加 */
+        border-radius: 0px;
+        /* 縁を丸くしない */
+    }
+
+    @media only screen and (max-width: 500px) {
+        .menu a {
+            font-size: 75%;
+            /* スマートフォンなどの場合、フォントサイズを75%に設定 */
+        }
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger-menu .bar {
+        width: 25px;
+        height: 3px;
+        background-color: rgba(255, 255, 255, 0.9);
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+
+    .menu a::after {
+        display: none;
+        /* スマートフォンなどの場合、下線を非表示にする */
+    }
+}
+
+/* 1200pxを超える場合のスタイル */
+@media only screen and (min-width: 1200px) {
+    .menu {
+        max-width: 1200px;
+    }
+}
+
+/* メインビジュアル */
+.main-visual-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.main-visual-left {
+    margin: 80px auto 0;
+    /* 上に20pxの空白を追加 */
+    width: 100%;
+    box-sizing: border-box;
+    /* 要素のパディングやボーダーを含めたサイズを40%にする */
+    padding: 16px;
+    /* 左右に空白を追加 */
+    align-items: left;
+    text-align: left;
+}
+
+.main-visual-right {
+    margin: 80px auto 0;
+    /* 上に20pxの空白を追加 */
+    width: 50%;
+    padding: 0px 0px;
+    /* 左右に空白を追加 */
+    box-sizing: border-box;
+    /* 要素のパディングやボーダーを含めたサイズを40%にする */
+    overflow: hidden;
+}
+  .slide {
+    display: none;
+    height: 100%;
+  }
+  
+  .active {
+    display: block;
+  }
+
+.main-visual-right img {
+    max-width: 125%;
+    /* 画像が親要素内に収まるようにする */
+    width: auto;
+    /* アスペクト比を保つために追加 */
+}
+
+h2 {
+    font-family: Hachi Maru Pop;
+    font-size: 450%;
+    color: #590202;
+}
+
+/* 800px以下の場合 */
+@media only screen and (max-width: 800px) {
+    .main-visual-container {
+        display: block;
+        /* ブロック要素に変更 */
+    }
+
+    .main-visual-left,
+    .main-visual-right {
+        width: 100%;
+        /* 画面幅いっぱいに広げる */
+        text-align: center;
+        /* 中央寄せにする */
+        margin-top: 20px;
+        /* 上の余白を縮小 */
+        display: block;
+        /* ブロック要素に変更 */
+    }
+
+    .main-visual-left {
+        order: -1;
+        /* main-visual-leftを先頭に表示する */
+    }
+
+    .main-visual-right img {
+        max-width: 100%;
+        /* 画像が親要素内に収まるようにする */
+        width: auto;
+        /* アスペクト比を保つために追加 */
+    }
+
+    h2 {
+        font-size: 250%
+    }
+}
+
+/*本文など*/
+.content {
+    /* position: relative; */
+    z-index: 1;
+    text-align: center;
+    color: #353535
+        /* 文字の色を#590202に設定 */
+}
+
+.content a {
+    color: #590202;
+    /* 文字の色を#590202に設定 */
+    text-decoration: none;
+    /* リンクの下線をなくす */
+}
+
+/* .content a:hover {
+    background-color: #F29472;
+    /* ホバー時のリンクの色 
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+} */
+
+@media only screen and (min-width: 1200px) {
+    .content {
+        top: 0;
+        left: 50%;
+        max-width: 1200px;
+        transform: translateX(-50%);
+        position: relative;
+        /* text-align: center; */
+    }
+}
+
+hr {
+    margin-top: -0px;
+    /* 上に0pxの余白を設定 */
+    width: 0px;
+}
+
+.logo {
+    position: absolute;
+    left: 12px;
+    top: 80px;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.textBox {
+    font-size: 125%;
+    margin: 40px auto 0;
+    /* 上に40pxの空白を追加 */
+}
+
+.title {
+    /* background-color: #F29472; */
+    /* padding: 8px; */
+    border-radius: 8px;
+    /* 縁を丸くする */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+.title h1 {
+    margin-bottom: 16px;
+    font-size: 40pt;
+    color: #590202;
+    margin: 80px auto 20px;
+    /* 上に80px、下に20pxの空白を追加 */
+}
+
+.main-text {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 2px 2px 4px -2px gray inset;
+    /* 背景色を#F2F2F2に設定 */
+    border-radius: 12px;
+    /* 縁を丸くする */
+    padding: 20px;
+    font-size: 18pt;
+    transition: transform 0.3s ease;
+}
+
+@media only screen and (max-width: 800px) {
+    .title h1 {
+        font-size: 32pt;
+    }
+
+    .main-text {
+        font-size: 12pt;
+    }
+}
+
+.main-text:hover {
+    transform: scale(1.025);
+    /* 拡大 */
+}
+
+#rule {
+    font-size: 75%;
+
+}
+
+#Q {
+    color: #101010;
+    font-size: 125%;
+    margin-top: 80px;
+}
+
+#A {
+    margin-top: -20px;
+}
+
+.main-text p {
+    padding: 8px;
+    text-align: left;
+}
+
+.main-text a {}
+
+.main-text h1 a {
+    padding: 0 10px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, #590202 50%);
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: .3s ease;
+    /* background-color: #F29472; */
+}
+
+.main-text h1 a:hover {
+    background-position: -100% 0;
+    color: #fff;
+}
+
+.main-text img {
+    max-width: 75%;
+    border-radius: 8px;
+}
+
+.rule {
+    margin: 20px auto 0;
+}
+
+
+
+.footer-container {
+    margin: 80px auto 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #590202;
+    color: #fff;
+    padding: 20px;
+}
+
+.left-content {
+    margin-left: 18%;
+}
+
+.right-content {
+    margin-right: 18%;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 800px) {
+    .footer-container {
+        flex-direction: column;
+        /* 800px以下で縦に並ぶように変更 */
+        align-items: center;
+        /* 中央揃え */
+    }
+    .left-content{
+    margin-left: 0%;
+}
+
+.right-content {
+    margin-right: 0%;
+    margin-bottom: 10px;
+    /* 要素間のマージンを追加 */
+}
+}
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F29472; /* 背景色は適宜変更してください */
+    z-index: 9999; /* ローディングアニメーションを最前面に表示 */
+  }
+  
+  .loading-animation {
+    width: 50px; /* アニメーションの幅 */
+    height: 50px; /* アニメーションの高さ */
+    border: 5px solid #ccc; /* アニメーションのボーダー */
+    border-radius: 50%; /* アニメーションの丸み */
+    border-top-color: #590202; /* アニメーションの色 */
+    animation: spin 1s linear infinite; /* スピンするアニメーション */
+    position: relative; /* 相対位置付け */
+    z-index: 1; /* ロゴ画像よりも前面に表示 */
+  }
+  
+  .logo {
+    position: absolute; /* 絶対位置付け */
+    top: 50%; /* 上端を中央に配置 */
+    left: 50%; /* 左端を中央に配置 */
+    transform: translate(-50%, -50%); /* 中央揃え */
+    z-index: 2; /* ロゴ画像を最前面に表示 */
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

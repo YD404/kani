@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="items/icon.ico" type="image/x-icon">
+    <title>カニ娘公式サイト 404</title>
+</head>
+
+<body>
+    <!-- <div class="background-video">
+        <video src="items/background.webm" autoplay loop muted></video>
+    </div> -->
+    <header><!-- テンプレートを読み込む -->
+        <div id="menu-container"></div>
+        <script>
+            // テンプレートを読み込み、#menu-containerに追加する
+            fetch('html/menu-template.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                });
+        </script>
+    </header>
+    <div class="content">
+        <hr>
+        <div class="textBox">
+            <div class="title">
+                <h1>404エラー</h1>
+            </div>
+            <div class="main-text">
+                <h1>お探しのページは存在しません</h1>
+                <h5><a href="#" onclick="history.back(-1);return false;">かなしい！！！！！！！！！！！！！！</a></h5>
+            </div>
+        </div>
+        <div class="title">
+            <h1>日記</h1>
+        </div>
+        <div class="main-text">
+            <p>～2.18<br>
+                色々つくった</p>
+            <p>2.19<br>
+                ヘッダーが上に固定されない問題をブラウザのウェブ開発ツールで調べた。<br>
+                ボックスモデルを見ると、positionが28.(小数点以下省略)みたいになっていることに気づいた。<br>
+                なんでそうなってるのかは不明</p>
+            <p>2.20<br>
+                最高気温が23℃で花粉がやばかった。目薬さしたけど夜目が痒くて目ヤニが酷かった。</p>
+            <p>2.21<br>
+                ヘッダーが800px以下だと一番上に固定されない問題を解決した。<br>
+                おそらくヘッダーの次の要素のmarginを参照してスペースを作ってしまっているのが原因で、index.html以外でこの現象が起きていた。<br>
+                width:0pxでmargin:0pxの＜hr＞をヘッダーの次に記述するという脳筋プレイによって解決した。</p>
+            <p>2.22<br>
+                フッダーを作った。テンプレートとして読み込むようにしたので改変がしやすい。<br>
+                画面サイズよりページサイズの方が小さいとフッダーが一番下に来なくて見栄えが悪い件は、画面サイズより小さいページをなくすという脳筋プレイによって解決した。<br>
+                多分4Kで見ると乱れるけど知らん。<br>
+                サイトのアイコンを設定した。LiveServerだと反映されないっぽい？（直接htmlを開いたら表示された）            </p>
+            <p>4.04<br>
+                紹介動画を作った。50%程完成した。
+            </p>
+            <p>4.05<br>
+                紹介動画が完成した。これでようやくindex.htmlの背景に動画を付けられる。<br>
+                立ち絵や環境の都合もあって1か月くらいかかったが、合計作業時間としては台本1日、調声2日、編集3日くらいなので滅茶苦茶詰めれば週一で2分くらいの動画が上げれるという計算になる...いやモチベーションが続かないが....<br>
+            </p>
+            <p>4.06<br>
+            ChatGPTに、開いた際のアニメーションと立ち絵の切り替えのコードを書いてもらった。<br>
+            立ち絵の切り替えは最初firefoxだとうまく行かなかったが、シンプルに書いてと指示したらうまく行った。</p>
+        </div>
+    </div>
+    </div>
+    <div class="sidebar">
+        <!-- ここにメニューバーを追加 -->
+    </div>
+    <div id="footer-container"></div>
+</body>
+<script src="script.js"></script>
+
+</html>

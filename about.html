@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="items/icon.ico" type="image/x-icon">
+    <title>カニ娘公式サイト 制作者</title>
+</head>
+
+<body>
+    <!-- <div class="background-video">
+        <video src="items/background.webm" autoplay loop muted></video>
+    </div> -->
+    <header><!-- テンプレートを読み込む -->
+        <div id="menu-container"></div>
+        <script>
+            // テンプレートを読み込み、#menu-containerに追加する
+            fetch('html/menu-template.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                });
+        </script>
+    </header>
+    <border>
+        <div class="content">
+            <hr>
+            <div class="textBox">
+                <div class="title">
+                    <h1>制作者</h1>
+                </div>
+                <div class="main-text">
+                    <h1>絵</h1>
+                    <h3>立花左伝(<a href="https://x.com/saden_126" target="_blank">@saden_126</a>)</h3>
+                    <h1>サポート</h1>
+                    <h3>よんまるよんD(<a href="https://x.com/404_YD" target="_blank">@404_YD</a>)</h3>
+                    <h1>声</h1>
+                    <h3>？？？</h3>
+                </div>
+            </div>
+            <div class="textBox">
+                <div class="title">
+                    <h1>お世話になったサイト</h1>
+                </div>
+                <div class="main-text">
+                    <h1>音声作成</h1>
+                    <p>有響シロ様　<a href="https://hasewoalice.wixsite.com/griffins-nest/mycoe" target="_blank">MYCOEIROINKの作り方</a><br>
+                        鹿仲茉菜様　<a href="https://twitter.com/MANA_TALK/status/1626152675292364801" target="_blank">MYCOEIROINK作成メモ</a><br>
+                        白痴ー様　<a href="https://www.nicovideo.jp/watch/sm40312833" target="_blank">お　前　も　音　声　合　成　に　な　る　ん　だ　よ</a></p>
+                    <h1>サイト作成</h1>
+                    <p><a href="https://chat.openai.com/" target="_blank">ChatGPT 3.5</a><br>
+                        <a href="https://www.tagindex.com/" target="_blank">Tagindex</a><br>
+                        <a href="https://qumeru.com" target="_blank">qumeru</a><br>
+                        <a href="https://webliker.info/" target="_blank">Webliker</a><br>
+                        <a href="https://squoosh.app" target="_blank">squoosh</a><br>
+                        <a href="https://service.tree-web.net/icon_converter/" target="_blank">アイコン コンバータ</a></p>
+                    </div>
+            </div>
+            <div class="sidebar">
+                <!-- ここにメニューバーを追加 -->
+            </div>
+        </div>
+        <div id="footer-container"></div>
+</body>
+<script src="script.js"></script>
+
+</html>

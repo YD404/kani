@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="items/icon.ico" type="image/x-icon">
+    <title>カニ娘公式サイト 制作者</title>
+</head>
+
+<body>
+    <!-- <div class="background-video">
+        <video src="items/background.webm" autoplay loop muted></video>
+    </div> -->
+    <header><!-- テンプレートを読み込む -->
+        <div id="menu-container"></div>
+        <script>
+            // テンプレートを読み込み、#menu-containerに追加する
+            fetch('html/menu-template.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('menu-container').innerHTML = data;
+                });
+        </script>
+    </header>
+    <div class="content">
+        <hr>
+        <div class="textBox">
+            <div class="title">
+                <h1>設定資料</h1>
+                <div class="main-text">
+                    <h3>ロゴ</h3>
+                    <img src="items/logo.avif" alt="ロゴ" width="50%">
+                    <h3>三面図</h3>
+                    <img src="items/sanmenzu.avif" alt="Main Visual">
+                    <h3>本名：蟹ヶ谷ムサコ</h3>
+                    <p>年齢：外見は19歳<br>
+                        身長：158cm<br>
+                        誕生日：6月22日（かに座）<br>
+                        CV：？？？<br>
+                        <br>
+                        神奈川県川崎市高津区蟹ヶ谷リバーサイド蟹ヶ谷404号室（築40年）に住んでいる少女。</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3245.538286610774!2d139.6290320264246!3d35.565103572624956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f58ce463595d%3A0xd7f03be44a926b27!2z44CSMjEzLTAwMjUg56We5aWI5bed55yM5bed5bSO5biC6auY5rSl5Yy66J-544Kx6LC3!5e0!3m2!1sja!2sjp!4v1707792888094!5m2!1sja!2sjp"
+                        width="90%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                    <p>カニが好きで、カニを布教するために配り歩いている。しかし、そのせいで金欠で家賃も危うい。<br>
+                    </p>
+                    <h5>※公式が言っているだけなので、設定順守を推奨しているわけではありません。</h5>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <!-- ここにメニューバーを追加 -->
+        </div>
+    </div>
+    <div id="footer-container"></div>
+</body>
+<script src="script.js"></script>
+
+</html>

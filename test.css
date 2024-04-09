@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* 背景色は適宜変更してください */
+  z-index: 9999; /* ローディングアニメーションを最前面に表示 */
+}
+
+.loading-animation {
+  width: 50px; /* アニメーションの幅 */
+  height: 50px; /* アニメーションの高さ */
+  border: 5px solid #ccc; /* アニメーションのボーダー */
+  border-radius: 50%; /* アニメーションの丸み */
+  border-top-color: #333; /* アニメーションの色 */
+  animation: spin 1s linear infinite; /* スピンするアニメーション */
+  position: relative; /* 相対位置付け */
+  z-index: 1; /* ロゴ画像よりも前面に表示 */
+}
+
+.logo {
+  position: absolute; /* 絶対位置付け */
+  top: 50%; /* 上端を中央に配置 */
+  left: 50%; /* 左端を中央に配置 */
+  transform: translate(-50%, -50%); /* 中央揃え */
+  z-index: 2; /* ロゴ画像を最前面に表示 */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
