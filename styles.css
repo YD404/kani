@@ -190,6 +190,7 @@ h2 {
     font-family: Hachi Maru Pop;
     font-size: 450%;
     color: #590202;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
 }
 
 /* 800px以下の場合 */
@@ -408,6 +409,8 @@ hr {
     /* 要素間のマージンを追加 */
 }
 }
+
+/*ローディングアニメーション*/
 body {
     margin: 0;
     padding: 0;
