@@ -156,7 +156,7 @@ body {
     /* 要素のパディングやボーダーを含めたサイズを40%にする */
     padding: 16px;
     /* 左右に空白を追加 */
-    align-items: left;
+    align-items: flex-start;
     text-align: left;
 }
 
@@ -169,6 +169,7 @@ body {
     box-sizing: border-box;
     /* 要素のパディングやボーダーを含めたサイズを40%にする */
     overflow: hidden;
+    align-items: flex-start;
 }
   .slide {
     display: none;
@@ -179,6 +180,12 @@ body {
     display: block;
   }
 
+.main-visual-left img {
+    max-width: 75%;
+    /* 画像が親要素内に収まるようにする */
+    width: auto;
+    /* アスペクト比を保つために追加 */
+}
 .main-visual-right img {
     max-width: 125%;
     /* 画像が親要素内に収まるようにする */
@@ -310,6 +317,7 @@ hr {
     padding: 20px;
     font-size: 18pt;
     transition: transform 0.3s ease;
+    align-items: flex-start;
 }
 
 @media only screen and (max-width: 800px) {
@@ -453,4 +461,26 @@ body {
       transform: rotate(360deg);
     }
   }
-  
+
+/*フッダー*/
+#footer{
+    font-size: 75%;
+}
+#footer a{
+    color:#fff;
+    font-size: 50%;
+}
+
+/*ブラウザ警告*/
+#browser-warning{
+    background-color: #fff;
+    font-size: 150%;
+    animation: gaming 500ms linear infinite;
+}
+@keyframes gaming {
+  /* 色の指定 */
+  0% { background-color: Magenta; }
+  33% { background-color: yellow; }
+  66% { background-color: Cyan; }
+  100% { background-color: Magenta; }
+}
