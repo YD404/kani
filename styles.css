@@ -1,3 +1,7 @@
+/*
+(/ω＼)見ないで～～
+*/
+
 body {
     margin: 0;
     background-color: #F29472;
@@ -483,4 +487,10 @@ body {
   33% { background-color: yellow; }
   66% { background-color: Cyan; }
   100% { background-color: Magenta; }
+}
+
+/*iPhone様向け*/
+.imgiPhone{
+    display: flex;
+    align-items: flex-start;
 }
