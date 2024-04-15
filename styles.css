@@ -497,3 +497,6 @@ body {
     
   margin: 0 auto; /* 左右のマージンを自動で設定して中央に配置 */
 }
+.imgiPhone-left{
+    display: flex;
+    align-items: flex-start;}
