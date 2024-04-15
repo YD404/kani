@@ -494,9 +494,9 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: center; /* 要素を水平方向に中央に配置 */
-    
-  margin: 0 auto; /* 左右のマージンを自動で設定して中央に配置 */
+    margin: 0 auto; /* 左右のマージンを自動で設定して中央に配置 */
 }
 .imgiPhone-left{
     display: flex;
-    align-items: flex-start;}
+    align-items: flex-start;
+}
